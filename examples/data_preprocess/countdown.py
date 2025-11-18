@@ -4,6 +4,7 @@ Preprocess dataset for countdown task - given a target number and N numbers, gen
 
 import re
 import os
+import pandas as pd
 from datasets import Dataset, load_dataset
 from random import randint, seed, choice
 from typing import List, Tuple
@@ -85,8 +86,9 @@ if __name__ == '__main__':
     TRAIN_SIZE = args.train_size
     TEST_SIZE = args.test_size
 
-    raw_dataset = load_dataset('Jiayi-Pan/Countdown-Tasks-3to4', split='train')
-
+    # raw_dataset = load_dataset('Jiayi-Pan/Countdown-Tasks-3to4', split='train')
+    raw_df = pd.read_parquet('data/train-00000-of-00001.parquet')
+    raw_dataset = Dataset.from_pandas(raw_df)
     assert len(raw_dataset) > TRAIN_SIZE + TEST_SIZE
     train_dataset = raw_dataset.select(range(TRAIN_SIZE))
     test_dataset = raw_dataset.select(range(TRAIN_SIZE, TRAIN_SIZE + TEST_SIZE))
