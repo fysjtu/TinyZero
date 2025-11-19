@@ -14,6 +14,9 @@ Full experiment log: https://wandb.ai/jiayipan/TinyZero
 
 > 📢: We release [Apative Parallel Reasoning](https://github.com/Parallel-Reasoning/APR), where we explore a new dimension in scaling reasoining models
 
+## 修改记录
+- 2025-11-20：新增 `tests/rollout/test_vllm_dtype_config.py`，用于验证 vLLM rollout 会把配置中的 dtype 传递给推理引擎，避免 Flash Attention 在 float32 下运行报错。
+
 ## Installation
 
 ```

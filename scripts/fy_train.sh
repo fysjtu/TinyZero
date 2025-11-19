@@ -1,3 +1,6 @@
+export VLLM_DEFAULT_DTYPE=bfloat16
+export TORCH_DTYPE=bfloat16
+
 export N_GPUS=2
 export BASE_MODEL=/root/.cache/modelscope/hub/models/Qwen/Qwen2.5-1.5B
 export DATA_DIR=data/
@@ -12,6 +15,10 @@ data.train_batch_size=2 \
 data.val_batch_size=2 \
 data.max_prompt_length=256 \
 data.max_response_length=512 \
+actor_rollout_ref.model.torch_dtype=bfloat16 \
+actor_rollout_ref.rollout.dtype=bfloat16 \
+actor_rollout_ref.ref.torch_dtype=bfloat16 \
+critic.model.torch_dtype=bfloat16 \
 actor_rollout_ref.model.path=$BASE_MODEL \
 actor_rollout_ref.model.use_remove_padding=True \
 actor_rollout_ref.actor.use_dynamic_bsz=False \
