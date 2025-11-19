@@ -662,6 +662,7 @@ class CriticWorker(Worker):
         if self._is_offload_optimizer:
             offload_fsdp_optimizer(optimizer=self.critic_optimizer)
 
+        print('\n\n\n\ critc',self.config)
         self.critic = DataParallelPPOCritic(config=self.config,
                                             critic_module=self.critic_module,
                                             critic_optimizer=self.critic_optimizer)
