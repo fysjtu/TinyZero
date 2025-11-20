@@ -8,7 +8,7 @@ export EXPERIMENT_NAME=countdown-qwen2.5-0.5b
 python3 -m verl.trainer.main_ppo \
     data.train_files=$DATA_DIR/train.parquet \
     data.val_files=$DATA_DIR/test.parquet \
-    data.train_batch_size=128 \
+    data.train_batch_size=256 \
     data.val_batch_size=640 \
     data.max_prompt_length=256 \
     data.max_response_length=1024 \
@@ -29,8 +29,8 @@ python3 -m verl.trainer.main_ppo \
     trainer.default_hdfs_dir=null \
     trainer.n_gpus_per_node=$N_GPUS \
     trainer.nnodes=1 \
-    trainer.save_freq=10 \
-    trainer.test_freq=10 \
+    trainer.save_freq=50 \
+    trainer.test_freq=50 \
     trainer.project_name=TinyZero \
     trainer.experiment_name=$EXPERIMENT_NAME \
     trainer.total_epochs=15 2>&1 | tee verl_demo.log

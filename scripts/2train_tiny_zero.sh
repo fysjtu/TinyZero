@@ -8,7 +8,7 @@ export EXPERIMENT_NAME=countdown-qwen2.5-0.5b
 python3 -m verl.trainer.main_ppo \
 data.train_files=$DATA_DIR/train.parquet \
 data.val_files=$DATA_DIR/test.parquet \
-data.train_batch_size=256 \
+data.train_batch_size=16 \
 data.val_batch_size=1312 \
 data.max_prompt_length=256 \
 data.max_response_length=1024 \
