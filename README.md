@@ -16,6 +16,11 @@ Full experiment log: https://wandb.ai/jiayipan/TinyZero
 
 ## 修改记录
 - 2025-11-20：新增 `tests/rollout/test_vllm_dtype_config.py`，用于验证 vLLM rollout 会把配置中的 dtype 传递给推理引擎，避免 Flash Attention 在 float32 下运行报错。
+- 2025-11-20：为 `verl/utils/reward_score/countdown.py` 添加详细的中文注释，包括：
+  - 模块级文档字符串，说明模块用途和使用场景
+  - 为每个函数添加详细的文档字符串，包括功能说明、参数说明、返回值说明和使用示例
+  - 为关键代码段添加行内注释，解释实现逻辑和设计考虑
+  - 注释覆盖了 extract_solution、validate_equation、evaluate_equation 和 compute_score 四个核心函数
 
 ## Installation
 
