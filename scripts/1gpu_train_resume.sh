@@ -7,7 +7,7 @@ export EXPERIMENT_NAME=countdown-qwen2.5-0.5b
 
 python3 -m verl.trainer.main_ppo \
     trainer.default_local_dir=/root/autodl-tmp/checkpoints \
-    trainer.resume_mode=resume \
+    +trainer.resume_mode=resume \
     data.train_files=$DATA_DIR/train.parquet \
     data.val_files=$DATA_DIR/test.parquet \
     data.train_batch_size=256 \
